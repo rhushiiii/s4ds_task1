@@ -1,0 +1,63 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background: #444;
+  padding: 10px;
+}
+.navbar li {
+  display: inline-block;
+}
+
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: #555; 
+}
+
+.products {
+  display: flex;
+  gap: 10px;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 10rem;
+}
+
+
+.products .card img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 8px;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+
+input, textarea {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+}
