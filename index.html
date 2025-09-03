@@ -7,35 +7,39 @@
 </head>
 <body>
 
-  <h1>My Website</h1>
-  <h1>Products</h1>
+  <header class="site-header">
+    <h1 class="site-title">My Website</h1>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Login</a></li>
-    </ul>
-  </nav>
+  <section class="hero">
+    <h2 class="hero-title">Products</h2>
+    <p class="hero-subtitle">Discover items curated for you.</p>
+    <button class="hero-cta" type="button">Shop Now</button>
+  </section>
 
-
-
-  <section class="products">
+  <section class="products" aria-label="Product list">
     <div class="card">
-      <img src="assets/shoes.png" />
+      <img src="assets/shoes.png" alt="Pair of shoes" />
       <p>Shoes</p>
     </div>
     <div class="card">
-      <img src="assets/watch.jpg" />
+      <img src="assets/watch.jpg" alt="Wrist watch" />
       <p>Watch</p>
     </div>
   </section>
 
-  <form id="contactForm">
-    <input type="text" name="name" placeholder="Name">
-    <input type="email" name="email" placeholder="Email">
-    <textarea name="message" placeholder="Message"></textarea>
+  <form id="contactForm" class="contact" aria-label="Contact form">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Message" rows="4" required></textarea>
     <button type="submit">Submit</button>
   </form>
 
