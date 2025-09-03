@@ -1,26 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply saved theme
-  const saved = localStorage.getItem('theme');
-  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const toggle = document.getElementById('themeToggle');
 
-  // Theme switcher
-  const switcher = document.querySelector('.theme-switch');
-  if (switcher) {
-    const setActive = (name) => {
-      switcher.querySelectorAll('button').forEach(btn => {
-        const active = btn.dataset.theme === name;
-        btn.classList.toggle('is-active', active);
-        btn.setAttribute('aria-pressed', String(active));
-      });
-    };
-    if (saved) setActive(saved);
-    switcher.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-theme]');
-      if (!btn) return;
-      const theme = btn.dataset.theme;
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      setActive(theme);
+  const normalize = (val) => (val === 'dark' ? 'dark' : 'light');
+  const apply = (mode) => {
+    if (mode === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    if (toggle) {
+      const isDark = mode === 'dark';
+      toggle.setAttribute('aria-pressed', String(isDark));
+      toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+    }
+    localStorage.setItem('theme', mode);
+  };
+
+  // Initial theme
+  const saved = localStorage.getItem('theme');
+  const initial = normalize(saved);
+  apply(initial);
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next);
     });
   }
 
