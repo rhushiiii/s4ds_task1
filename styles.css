@@ -1,7 +1,20 @@
+:root {
+  --bg: #F8FAFC;
+  --text: #0F172A;
+  --muted: #64748B;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --surface: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --card-border: #E5E7EB;
+  --footer-bg: #111827;
+  --footer-text: #9CA3AF;
+}
+
 body {
   font-family: 'Inter', Arial, sans-serif;
-  background: #F9FAFB;
-  color: #111827;
+  background: var(--bg);
+  color: var(--text);
   margin: 0;
   padding: 0;
 }
@@ -25,7 +38,7 @@ body {
   margin: 0;
 }
 
-/* Navbar: preserve structure, enhance links */
+/* Navbar */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -36,7 +49,7 @@ body {
 .navbar li { display: inline-block; }
 .navbar a {
   text-decoration: none;
-  color: #4F46E5;
+  color: var(--primary);
   font-weight: 500;
 }
 
@@ -51,12 +64,12 @@ body {
   margin: 0 0 1rem 0;
 }
 .hero-subtitle {
-  color: #6B7280;
+  color: var(--muted);
   font-size: 1.2rem;
   margin: 0 0 2rem 0;
 }
 .hero-cta {
-  background: #4F46E5;
+  background: var(--primary);
   color: #fff;
   padding: 0.75rem 2rem;
   border: 0;
@@ -65,9 +78,9 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-.hero-cta:hover { background: #4338CA; }
+.hero-cta:hover { background: var(--primary-hover); }
 
-/* Product Grid: upgrade to responsive grid */
+/* Product Grid */
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -75,14 +88,18 @@ body {
   padding: 2rem;
 }
 .card {
-  background: #13b5cf;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.card:hover { transform: translateY(-5px); }
+.card:hover { 
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
 .products .card img,
 .card img {
   max-width: 100%;
@@ -96,7 +113,7 @@ body {
 .contact {
   max-width: 500px;
   margin: 3rem auto;
-  background: #fff;
+  background: var(--surface);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -107,23 +124,23 @@ body {
   width: 100%;
   margin: 0.75rem 0;
   padding: 0.75rem;
-  border: 1px solid #D1D5DB;
+  border: 1px solid var(--card-border);
   border-radius: 0.75rem;
   font: inherit;
 }
 .contact button {
-  background: #4F46E5;
+  background: var(--primary);
   color: #fff;
   font-weight: 600;
   border: none;
   cursor: pointer;
 }
-.contact button:hover { background: #4338CA; }
+.contact button:hover { background: var(--primary-hover); }
 
-/* Footer: override to be static and styled */
+/* Footer */
 footer {
-  background: #111827;
-  color: #9CA3AF;
+  background: var(--footer-bg);
+  color: var(--footer-text);
   text-align: center;
   padding: 1.5rem;
   margin-top: 3rem;
