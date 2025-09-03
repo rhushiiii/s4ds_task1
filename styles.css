@@ -1,63 +1,106 @@
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #fff;
   color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #444;
+  color: white;
+  padding: 15px;
+}
+
+header h1 {
+  margin: 0;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  background: #444;
-  padding: 10px;
-}
-.navbar li {
-  display: inline-block;
+  padding: 0;
+  margin: 10px 0 0;
 }
 
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-.banner {
-  position: relative;
-  text-align: center;
-  color: #555; 
+.navbar a:hover {
+  color: #ffd700;
 }
 
 .products {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
 }
+
 .card {
   border: 1px solid #ccc;
-  padding: 10px;
-  max-height: 10rem;
+  padding: 15px;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+  background: #fafafa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
 
 .products .card img {
-  width: 120px;
+  width: 100%;
   height: auto;
-  display: block;
-  margin: 0 auto 10px auto;
   border-radius: 8px;
 }
 
+form {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #333;
+}
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   background: #222;
   color: white;
   text-align: center;
-  padding: 10px;
-}
-
-
-input, textarea {
-  display: block;
-  margin: 10px 0;
-  padding: 8px;
+  padding: 15px;
+  margin-top: 30px;
 }
