@@ -127,9 +127,9 @@ body {
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.card:hover { 
+.card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 28px -10px rgba(0, 0, 0, 0.35), 0 8px 12px -8px rgba(0, 0, 0, 0.2);
 }
 .products .card img,
 .card img {
